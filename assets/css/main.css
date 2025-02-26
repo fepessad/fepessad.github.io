@@ -1289,13 +1289,3 @@ section,
   /* Add your styles here */
   display: flex;
 }
-
-/* ----------------------------------------------------------- */
-/* Effacer pour activer a nouveau le button "Nachricht senden" */
-/* ----------------------------------------------------------- */
-/* button {
-  background: transparent;
-  border: none;
-  cursor: default;
-  pointer-events: none;
-} */

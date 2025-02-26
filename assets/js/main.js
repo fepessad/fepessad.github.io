@@ -280,6 +280,29 @@
       thisForm.querySelector('.error-message').classList.add('d-block');
     }
 
+    /**
+    * Clear form function
+    */
+    window.clearForm = function() {
+      let inputs = document.querySelectorAll('.php-email-form input, .php-email-form textarea');
+      let emailInput = document.querySelector('.php-email-form input[type="email"]');
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailInput && !emailPattern.test(emailInput.value)) {
+      displayError(document.querySelector('.php-email-form'), 'Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      return;
+      }
+      for (let input of inputs) {
+      if (input.value.trim() === '') {
+        displayError(document.querySelector('.php-email-form'), 'Bitte füllen Sie alle Felder aus.');
+        return;
+      }
+      }
+      document.querySelector('.php-email-form .error-message').classList.remove('d-block');
+      document.querySelector('.php-email-form').reset();
+      alert('Ihre Nachricht wurde erfolgreich gesendet!');
+    };
+    
   });
 
 })();
